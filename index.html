@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oltre lo Schermo: La Tecnologia che Ti Serve</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #00509e;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 20px;
+        }
+        .hero h2 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .main {
+            flex: 2;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cta {
+            background: #ff6600;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta:hover {
+            background: #e65c00;
+        }
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .icons-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: #6492b1;
+            border: 2px solid #6492b1;
+            border-radius: 10px;
+            padding: 15px;
+            color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: opacity 0.5s ease-out;
+        }
+        .icon img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .icon p {
+            margin: 0;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .description-box {
+            margin-top: 20px;
+            background: #6492b1;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: none;
+        }
+        .form-popup {
+            position: fixed;
+            bottom: -500px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #6492b1;
+            border: 2px solid #6492b1;
+            border-radius: 10px;
+            padding: 20px;
+            width: 70%;
+            max-width: 800px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        .form-popup.active {
+            bottom: 50px;
+            opacity: 1;
+        }
+        .form-popup h3 {
+            margin-top: 0;
+            color: #ffffff;
+            text-align: center;
+        }
+        .form-popup form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .form-popup input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .form-popup button {
+            background: #ffffff;
+            color: #6492b1;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-popup button:hover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Scuola di Formazione Nobel</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Corsi</a>
+        <a href="#">Chi Siamo</a>
+        <a href="#">Contatti</a>
+    </nav>
+    <div class="hero">
+        <h2>Oltre lo Schermo: La Tecnologia che Ti Serve</h2>
+        <p>Impara a navigare nel mondo digitale con facilità e sicurezza.</p>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="main">
+                <h2>Perché Partecipare?</h2>
+                <p>In un mondo sempre più connesso, la tecnologia è un'opportunità per essere indipendenti e rimanere in contatto con tutto ciò che conta.</p>
+                <h2>Cosa Imparerai?</h2>
+                <ul>
+                    <li>Navigare su internet in sicurezza.</li>
+                    <li>Creare e utilizzare una e-mail per comunicare facilmente.</li>
+                    <li>Attivare e usare lo SPID per accedere ai servizi pubblici online.</li>
+                    <li>Fare acquisti online, prenotare viaggi o pagare le bollette in pochi clic.</li>
+                    <li>Usare WhatsApp, Google Maps e altre app utili per restare connessi e organizzati.</li>
+                    <li>Guardare film, leggere libri digitali e partecipare a videochiamate con i tuoi cari.</li>
+                </ul>
+                <h2>Dettagli del Corso</h2>
+                <p><strong>Durata:</strong> 40 ore (20 ore di pratica e 20 ore di teoria applicata)</p>
+                <p><strong>Lezioni:</strong> Due appuntamenti settimanali di 2 ore ciascuno, dalle 10:00 alle 12:00</p>
+                <p><strong>Partecipanti:</strong> Massimo 10 persone per garantire un supporto personalizzato</p>
+                <p><strong>Costo:</strong> €250, con possibilità di pagamento dilazionato</p>
+                <div class="icons-section">
+                    <div class="icon" onclick="showDescription(this)" data-description="Questo corso dura 40 ore, suddivise in 20 ore di pratica e 20 ore di teoria.">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/hourglass--v1.png" alt="Durata">
+                        <p>Durata: 40 ore</p>
+                    </div>
+                    <div class="icon" onclick="showDescription(this)" data-description="Il corso si svolgerà interamente in presenza, garantendo un supporto diretto.">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/teacher.png" alt="Modalità">
+                        <p>Modalità: In presenza</p>
+                    </div>
+                    <div class="icon" onclick="showDescription(this)" data-description="Il costo del corso è di €250, con possibilità di pagamento dilazionato.">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/money.png" alt="Costo">
+                        <p>Costo: €250</p>
+                    </div>
+                </div>
+                <div id="icon-description" class="description-box">
+                    <p id="description-text"></p>
+                </div>
+                <button class="cta" onclick="openForm()">Iscriviti Ora</button>
+            </div>
+            <div class="sidebar">
+                <h3>Contattaci</h3>
+                <p><strong>Telefono:</strong> 081 239 6600</p>
+                <p><strong>Whatsapp:</strong> 334 507 6182</p>
+                <p><strong>Email:</strong> info@arcnobel.it</p>
+                <h3>Indirizzo</h3>
+                <p>Via Renato Caccioppoli, 17<br>80125 Napoli NA</p>
+                <h3>Seguici</h3>
+                <p>
+            <div class="social-media">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fistitutonobel&tabs=timeline&width=180&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="180" height="70" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                    <p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo" style="width: 24px; height: 24px; margin-right: 10px; vertical-align: middle;">
+    <a href="https://www.instagram.com/istituto_nobel/" target="_blank" style="color: #833AB4; font-weight: bold; text-decoration: none;">Instagram</a>
+</p>
+</div>
+        </div>
+    </div>
+    <div class="form-popup" id="formPopup">
+        <h3>Iscriviti al Corso</h3>
+        <form>
+            <input type="text" placeholder="Nome" required>
+            <input type="text" placeholder="Cognome" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Numero di Telefono" required>
+            <button type="submit">Invia</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 Scuola di Formazione Nobel. Tutti i diritti riservati.</p>
+    </footer>
+    <script>
+        function showDescription(element) {
+            const description = element.getAttribute('data-description');
+            const descriptionBox = document.getElementById('icon-description');
+            const descriptionText = document.getElementById('description-text');
+
+            descriptionText.textContent = description;
+            descriptionBox.style.display = 'block';
+        }
+
+        function openForm() {
+            const formPopup = document.getElementById('formPopup');
+            formPopup.classList.add('active');
+        }
+    </script>
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", async function (event) {
+        event.preventDefault(); // Evita il comportamento predefinito del modulo
+
+        // Raccogli i dati inseriti nel modulo
+        const formData = new FormData(event.target);
+        const data = {
+            email: formData.get("email"),
+            attributes: {
+                FIRSTNAME: formData.get("firstName"),
+                LASTNAME: formData.get("lastName"),
+                SMS: formData.get("phone")
+            },
+            listIds: [#64]
+            updateEnabled: true
+        };
+
+        try {
+            // Invia i dati a Brevo
+            const response = await fetch("https://api.brevo.com/v3/contacts", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "api-key": "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" 
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert("Iscrizione completata con successo!");
+                event.target.reset(); // Resetta il modulo
+            } else {
+                const errorData = await response.json();
+                alert("Errore: " + errorData.message);
+            }
+        } catch (error) {
+            console.error("Errore durante l'invio dei dati:", error);
+            alert("Si è verificato un errore. Riprova.");
+        }
+    });
+</script>
+</body>
+</html>
